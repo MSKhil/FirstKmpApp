@@ -22,6 +22,7 @@ class KtorOneGalaxyApi {
     }
 
     suspend fun getUsers(): List<UserDto> {
+        println("DEBUG: Sending request to: $BASE_URL")
         return client.get(BASE_URL) {
             parameter("action", "getUsers")
         }.body()
