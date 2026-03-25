@@ -22,8 +22,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Create fake local.properties
-        run: echo "SCRIPT_URL=https://script.google.com/macros/s/FAKE/exec" > local.properties
+      - name: Create local.properties
+        run: echo "SCRIPT_URL=${{ secrets.SCRIPT_URL }}" > local.properties
 
       - name: Make gradlew executable
         run: chmod +x gradlew
