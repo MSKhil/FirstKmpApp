@@ -1,5 +1,6 @@
 package com.example.kmpapp.network
 
+import com.example.kmpapp.BuildConfig
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -9,7 +10,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 class KtorOneGalaxyApi {
-    private val BASE_URL = "https://script.google.com/macros/s/AKfycbwMSncG73CPMMUBONxkocxALFNog_IJSyUubEGg92751pvp-J2oBvo7R_CKNr9VFTQ/exec"
+    private val BASE_URL = BuildConfig.SCRIPT_URL
 
     private val client = HttpClient {
         install(ContentNegotiation){
