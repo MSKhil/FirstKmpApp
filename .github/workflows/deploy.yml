@@ -25,11 +25,14 @@ jobs:
       - name: Create fake local.properties
         run: echo "SCRIPT_URL=https://script.google.com/macros/s/FAKE/exec" > local.properties
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Build WebAssembly Release
         run: ./gradlew :composeApp:wasmJsBrowserDistribution
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
